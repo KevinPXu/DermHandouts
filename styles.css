@@ -1,0 +1,375 @@
+/* Base – clinical handout style */
+:root {
+  --color-bg: #fff;
+  --color-surface: #fff;
+  --color-text: #000;
+  --color-muted: #333;
+  --color-border: #000;
+  --color-accent: #000;
+  --color-accent-hover: #333;
+  --color-callout: #E0F2F7;
+  --color-table-header: #DDEBF7;
+  --font-sans: Arial, Helvetica, system-ui, sans-serif;
+  --space: 1rem;
+  --max-width: 52rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+/* Header – title + top tabs */
+.site-header {
+  background: var(--color-surface);
+  border-bottom: 2px solid var(--color-border);
+  padding: var(--space) 1.5rem;
+}
+
+.site-header h1 {
+  margin: 0 0 0.75rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.site-header h1 a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.site-header h1 a:hover {
+  text-decoration: underline;
+}
+
+/* Top nav – horizontal tabs */
+.handout-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.handout-nav li {
+  margin: 0;
+}
+
+.handout-nav a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+}
+
+.handout-nav a:hover {
+  color: var(--color-accent-hover);
+  text-decoration: none;
+  border-bottom-color: var(--color-border);
+}
+
+.handout-nav a[aria-current="page"] {
+  border-bottom-color: var(--color-border);
+}
+
+/* Main content – full width, no sidebar */
+.handout-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--color-surface);
+}
+
+/* Landing page – cards linking to each handout */
+.handout-content.landing {
+  display: block;
+}
+
+#handout-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1.5rem;
+}
+
+.handout-card {
+  display: block;
+  padding: 1.5rem;
+  border: 2px solid var(--color-border);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.handout-card:hover {
+  background: var(--color-callout);
+}
+
+.handout-card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border: none;
+}
+
+.handout-card h2::after {
+  display: none;
+}
+
+.handout-card-description {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-muted);
+}
+
+.handout-section {
+  margin-bottom: 3rem;
+  scroll-margin-top: 1rem;
+}
+
+.handout-section:last-child {
+  margin-bottom: 0;
+}
+
+/* Main handout title – large, uppercase, black line underneath */
+.handout-section > h2 {
+  margin: 0 0 0.75rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  padding-bottom: 0;
+  border: none;
+}
+
+.handout-section > h2::after {
+  content: "";
+  display: block;
+  margin-top: 0.5rem;
+  height: 2px;
+  background: var(--color-border);
+  width: 100%;
+}
+
+.handout-description {
+  margin: 0 0 1.25rem;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.handout-body {
+  margin-top: 1rem;
+}
+
+/* Section headings – bold, with thin black underline */
+.handout-body h2 {
+  font-size: 1.5rem;
+  margin: 1.75rem 0 0.5rem;
+  font-weight: bold;
+  color: var(--color-text);
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.handout-body h2:first-child {
+  margin-top: 0;
+}
+
+.handout-body h3 {
+  font-size: 1.1rem;
+  margin: 1.25rem 0 0.4rem;
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+.handout-body p {
+  margin: 0 0 0.75rem;
+}
+
+.handout-body ul {
+  margin: 0 0 1rem;
+  padding-left: 1.5rem;
+}
+
+.handout-body li {
+  margin-bottom: 0.4rem;
+}
+
+.handout-body strong {
+  font-weight: bold;
+}
+
+.handout-body a {
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+.handout-body a:hover {
+  text-decoration: none;
+}
+
+/* Important reminder / call-out box – light blue background */
+.handout-body .reminder,
+.handout-body .callout {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--color-callout);
+  border: none;
+  border-radius: 0;
+}
+
+.handout-body .callout h2 {
+  margin-top: 0;
+}
+
+/* Product table – black borders, light blue header, centered header text */
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: 0.9rem;
+  border: 1px solid var(--color-border);
+}
+
+.product-table th,
+.product-table td {
+  border: 1px solid var(--color-border);
+  padding: 0.75rem 1rem;
+  vertical-align: top;
+}
+
+.product-table thead th {
+  background: var(--color-table-header);
+  font-weight: bold;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.product-table tbody tr {
+  background: var(--color-surface);
+}
+
+.product-table tbody td {
+  text-align: left;
+}
+
+.product-table td strong {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.product-table br {
+  margin-bottom: 0.25rem;
+}
+
+@media (max-width: 50rem) {
+  .product-table {
+    display: block;
+    border: none;
+  }
+
+  .product-table thead {
+    display: none;
+  }
+
+  .product-table tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+  }
+
+  .product-table td {
+    display: block;
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .product-table td:last-child {
+    border-bottom: none;
+  }
+
+  .product-table td::before {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--color-text);
+  }
+
+  .product-table td:nth-child(1)::before { content: "Product"; }
+  .product-table td:nth-child(2)::before { content: "Benefits"; }
+  .product-table td:nth-child(3)::before { content: "How to use"; }
+  .product-table td:nth-child(4)::before { content: "Cautions"; }
+}
+
+/* Error state */
+.error {
+  color: var(--color-muted);
+  padding: 2rem;
+}
+
+/* Print */
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .site-header {
+    border-bottom: 2px solid #000;
+  }
+
+  .handout-nav {
+    display: none;
+  }
+
+  .handout-content {
+    padding: 0;
+  }
+
+  .handout-section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .handout-section > h2::after {
+    background: #000;
+  }
+
+  .product-table th {
+    background: #ddebf7 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .product-table th,
+  .product-table td {
+    border-color: #000;
+  }
+
+  .handout-body .reminder,
+  .handout-body .callout {
+    background: #e0f2f7 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: #000;
+  }
+}
