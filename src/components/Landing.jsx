@@ -23,10 +23,10 @@ export default function Landing() {
 
         <Row className="g-4 justify-content-center pb-5">
           {handouts.map((h, i) => (
-            <Col key={h.id} xs={12} sm={6} lg={5}>
-              <Link to={`/${h.id}`} className="text-decoration-none">
+            <Col key={h.id} xs={12} sm={6} lg={5} className="d-flex">
+              <Link to={`/${h.id}`} className="text-decoration-none d-flex w-100">
                 <Card
-                  className="handout-card-animated"
+                  className="handout-card-animated w-100"
                   style={{ animationDelay: `${i * 0.15}s` }}
                 >
                   <div className="card-img-wrapper">
@@ -36,11 +36,11 @@ export default function Landing() {
                       alt={h.title}
                     />
                   </div>
-                  <Card.Body>
+                  <Card.Body className="d-flex flex-column">
                     <Card.Title className="fw-bold text-uppercase">
                       {h.title}
                     </Card.Title>
-                    <Card.Text className="text-muted">
+                    <Card.Text className="text-muted flex-grow-1">
                       {h.description}
                     </Card.Text>
                     <span className="card-link-text">
