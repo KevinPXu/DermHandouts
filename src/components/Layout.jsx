@@ -1,6 +1,6 @@
 import { Outlet, Link } from 'react-router-dom';
 import { Container, Navbar, Nav } from 'react-bootstrap';
-import handoutsData from '../data/handouts.json';
+import handoutsData from '../data/handouts.js';
 
 export default function Layout() {
   const handouts = handoutsData.handouts || [];

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import handoutsData from '../data/handouts.json';
+import handoutsData from '../data/handouts.js';
 import '../styles/Landing.css';
 
 const imageMap = {

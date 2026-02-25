@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
-import handoutsData from '../data/handouts.json';
+import handoutsData from '../data/handouts.js';
 import '../styles/HandoutPage.css';
 
 export default function HandoutPage() {
@@ -24,22 +24,10 @@ export default function HandoutPage() {
         {handout.description && (
           <p className="handout-description">{handout.description}</p>
         )}
-
-        {handout.embedUrl ? (
-          <div className="canva-embed-wrapper">
-            <iframe
-              src={handout.embedUrl}
-              className="canva-embed"
-              allowFullScreen
-              title={handout.title}
-            />
-          </div>
-        ) : (
-          <div
-            className="handout-body"
-            dangerouslySetInnerHTML={{ __html: handout.content }}
-          />
-        )}
+        <div
+          className="handout-body"
+          dangerouslySetInnerHTML={{ __html: handout.content }}
+        />
       </section>
     </Container>
   );
