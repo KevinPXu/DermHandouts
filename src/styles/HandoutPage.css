@@ -1,0 +1,190 @@
+.handout-page {
+  max-width: 52rem;
+  background: var(--color-surface);
+}
+
+.handout-section {
+  margin-bottom: 3rem;
+}
+
+.handout-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  padding-bottom: 0;
+  border: none;
+  margin-bottom: 0.5rem;
+}
+
+.handout-title::after {
+  content: "";
+  display: block;
+  margin-top: 0.5rem;
+  height: 2px;
+  background: var(--color-border);
+  width: 100%;
+}
+
+.handout-description {
+  margin: 0 0 1.25rem;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.handout-body {
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+.handout-body h2 {
+  font-size: 1.5rem;
+  margin: 1.75rem 0 0.5rem;
+  font-weight: 700;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.handout-body h2:first-child {
+  margin-top: 0;
+}
+
+.handout-body h3 {
+  font-size: 1.1rem;
+  margin: 1.25rem 0 0.4rem;
+  font-weight: 700;
+}
+
+.handout-body p {
+  margin: 0 0 0.75rem;
+}
+
+.handout-body ul {
+  margin: 0 0 1rem;
+  padding-left: 1.5rem;
+}
+
+.handout-body li {
+  margin-bottom: 0.4rem;
+}
+
+.handout-body a {
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+.handout-body a:hover {
+  text-decoration: none;
+}
+
+/* Call-out / reminder box */
+.handout-body .reminder,
+.handout-body .callout {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--color-callout);
+  border-radius: 0.5rem;
+}
+
+.handout-body .callout h2 {
+  margin-top: 0;
+  border-bottom: none;
+}
+
+/* Product table */
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: 0.9rem;
+  border: 1px solid var(--color-border);
+}
+
+.product-table th,
+.product-table td {
+  border: 1px solid var(--color-border);
+  padding: 0.75rem 1rem;
+  vertical-align: top;
+}
+
+.product-table thead th {
+  background: var(--color-table-header);
+  font-weight: 700;
+  text-align: center;
+}
+
+.product-table tbody td {
+  text-align: left;
+}
+
+.product-table td strong {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+@media (max-width: 50rem) {
+  .handout-title {
+    font-size: 1.75rem;
+  }
+
+  .product-table {
+    display: block;
+    border: none;
+  }
+
+  .product-table thead {
+    display: none;
+  }
+
+  .product-table tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+  }
+
+  .product-table td {
+    display: block;
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .product-table td:last-child {
+    border-bottom: none;
+  }
+
+  .product-table td::before {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .product-table td:nth-child(1)::before { content: "Product"; }
+  .product-table td:nth-child(2)::before { content: "Benefits"; }
+  .product-table td:nth-child(3)::before { content: "How to use"; }
+  .product-table td:nth-child(4)::before { content: "Cautions"; }
+}
+
+@media print {
+  .handout-page {
+    padding: 0;
+  }
+
+  .product-table th {
+    background: #ddebf7 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .handout-body .reminder,
+  .handout-body .callout {
+    background: #e0f2f7 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+  }
+}

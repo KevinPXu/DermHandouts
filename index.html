@@ -3,24 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Acne – Dermatology Handouts</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Dermatology Handouts</title>
 </head>
 <body>
-  <header class="site-header">
-    <h1><a href="index.html">Dermatology Handouts</a></h1>
-    <nav class="handout-nav" aria-label="Handouts">
-      <ul id="handout-list"></ul>
-    </nav>
-  </header>
-
-  <main class="handout-content">
-    <div id="handout-sections"></div>
-  </main>
-
+  <div id="root"></div>
   <script>
-    window.PAGE_ID = 'acne';
+    // SPA redirect handler for GitHub Pages 404 trick
+    (function(l) {
+      if (l.search[1] === '/') {
+        var decoded = l.search.slice(1).split('&').map(function(s) {
+          return s.replace(/~and~/g, '&');
+        }).join('?');
+        window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+      }
+    }(window.location));
   </script>
-  <script src="handout-page.js"></script>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
