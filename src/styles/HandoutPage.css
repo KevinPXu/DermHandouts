@@ -121,26 +121,12 @@
 }
 
 .card-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background: var(--color-accent, #0891b2);
-  color: #fff;
-  font-weight: 700;
-  font-size: 0.9rem;
-  margin-bottom: 0.6rem;
+  display: none;
 }
 
 .numbered-card-accent {
   background: #fef2f2;
   border-color: #fca5a5;
-}
-
-.numbered-card-accent .card-num {
-  background: #dc2626;
 }
 
 /* ---- Callout / Reminder box ---- */
