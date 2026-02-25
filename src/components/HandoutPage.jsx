@@ -24,10 +24,22 @@ export default function HandoutPage() {
         {handout.description && (
           <p className="handout-description">{handout.description}</p>
         )}
-        <div
-          className="handout-body"
-          dangerouslySetInnerHTML={{ __html: handout.content }}
-        />
+
+        {handout.embedUrl ? (
+          <div className="canva-embed-wrapper">
+            <iframe
+              src={handout.embedUrl}
+              className="canva-embed"
+              allowFullScreen
+              title={handout.title}
+            />
+          </div>
+        ) : (
+          <div
+            className="handout-body"
+            dangerouslySetInnerHTML={{ __html: handout.content }}
+          />
+        )}
       </section>
     </Container>
   );

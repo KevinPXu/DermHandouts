@@ -3,6 +3,26 @@
   background: var(--color-surface);
 }
 
+/* Canva embed */
+.canva-embed-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 141%;  /* ~letter-size aspect ratio */
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.canva-embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 .handout-section {
   margin-bottom: 3rem;
 }
